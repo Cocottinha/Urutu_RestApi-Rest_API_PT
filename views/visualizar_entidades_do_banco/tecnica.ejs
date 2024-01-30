@@ -1,0 +1,29 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/homenavbar.ejs') %>
+
+<div class="container">
+    <br><hr>
+
+    <div class="col col-12" style="padding-left: 30%;">
+        <h2> Consulta de Técnicas </h2>
+    </div>
+    
+    <hr>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID_tecnica </th>
+                <th>ID_ponto   </th>
+            </tr>
+        </thead>
+    <tbody>
+            <% tecnica.forEach(tc => { %>
+            <tr>
+                <th><%= tc.id_tecnica          %></th>    
+                <th><%= tc.PontoIdPonto        %></th>    
+            <% })%>
+        </tbody>
+    </table>
+    <br><hr>
+</div>

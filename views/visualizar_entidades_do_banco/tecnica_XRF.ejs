@@ -1,0 +1,77 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/homenavbar.ejs') %>
+
+
+
+
+<div class="container">
+    <br><hr>
+
+    <div class="col col-12" style="padding-left: 30%;">
+        <h2> Consulta de Pontos XRF </h2>
+    </div>
+    <hr>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID_Técnica_XRF  </th>
+                <th>Tempo           </th>
+                <th>Tensão          </th>
+                <th>Corrente        </th>
+                <th>Calibração      </th>
+                <th>Colimador       </th>
+                <th>Data            </th>
+                <th>Comentário      </th>
+                <th>Resultado       </th>
+                <th>Tonalidade      </th>
+                <th>Nome da técnica </th>
+                <th>ID_Técnica      </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tecnicaXrf.forEach(tcXrf => { %>
+            <tr>
+                <th><%= tcXrf.id_tecnica_xrf              %></th>    
+                <th><%= tcXrf.tempo                       %></th>    
+                <th><%= tcXrf.voltagem                    %></th>    
+                <th><%= tcXrf.corrente                    %></th>    
+                <th><%= tcXrf.calibracao                  %></th>    
+                <th><%= tcXrf.colimador                   %></th>    
+                <th><%= tcXrf.data                        %></th>    
+                <th><%= tcXrf.comentario                  %></th>    
+                <th><%= tcXrf.resultado                   %></th> 
+                <th><%= tcXrf.tonalidade                  %></th> 
+                <th><%= tcXrf.nome_tecnica                %></th> 
+                <th><%= tcXrf.TecnicaIdTecnica            %></th> 
+            <% })%>
+        </tbody>
+    </table>
+    <br><hr>
+
+    <div class="col col-12" style="padding-left: 30%;">
+        <h2> Consulta de Arquivos XRF </h2>
+    </div>
+    <hr>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr> 
+                <th>ID_Arquivo_XRF          </th>
+                <th>Nome do arquivo         </th>
+                <th>ID_Técnica_XRF          </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <% tecnicaXrfDiretorio.forEach(tcXrfDir => { %>
+            <tr>
+                <th><%= tcXrfDir.id_tecnica_xrf_diretorio          %></th>    
+                <th><%= tcXrfDir.diretorio_arquivo_xrf             %></th>    
+                <th><%= tcXrfDir.TecnicaXRFIdTecnicaXrf            %></th>    
+            <% })%>
+        </tbody>
+
+    </table>
+    <br><hr>
+</div>

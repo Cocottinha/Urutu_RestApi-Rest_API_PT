@@ -1,0 +1,36 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/homenavbar.ejs') %>
+
+<div class="container">
+    <br><hr>
+    
+    <div class="col col-12" style="padding-left: 30%;">
+        <h2> Consulta de Pontos </h2>
+    </div>
+
+    <hr>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID_ponto        </th>
+                <th>Nome do ponto   </th>
+                <th>Posição X       </th>
+                <th>Posição Y       </th>          
+                <th>ID_Projeto      </th>          
+
+            </tr>
+        </thead>
+        <tbody>
+            <% ponto.forEach(pt => { %>
+            <tr>
+                <th><%= pt.id_ponto              %></th>    
+                <th><%= pt.nome_ponto            %></th>  
+                <th><%= pt.posicao_x             %></th>  
+                <th><%= pt.posicao_y             %></th>  
+                <th><%= pt.ProjetoIdProjeto      %></th>  
+            <% })%>
+        </tbody>
+    </table>
+    <br><hr>
+</div>

@@ -1,0 +1,73 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/homenavbar.ejs') %>
+
+<div class="container">
+    <br><hr>
+
+    <div class="col col-12" style="padding-left: 30%;">
+        <h2> Consulta de Pontos MO </h2>
+    </div>
+
+    <hr>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID_Técnica_MO   </th>
+                <th>Incremento      </th>
+                <th>Data            </th>
+                <th>Comentário      </th>
+                <th>Resultado       </th>
+                <th>Tonalidade      </th>
+                <th>Nome da técnica </th>
+                <th>ID_Técnica      </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tecnicaMo.forEach(tcMo => { %>
+            <tr>
+                <th><%= tcMo.id_tecnica_mo            %></th>    
+                <th><%= tcMo.aumento                  %></th>    
+                <th><%= tcMo.data                     %></th>    
+                <th><%= tcMo.comentario               %></th>    
+                <th><%= tcMo.resultado                %></th> 
+                <th><%= tcMo.tonalidade               %></th> 
+                <th><%= tcMo.nome_tecnica             %></th> 
+                <th><%= tcMo.TecnicaIdTecnica         %></th> 
+
+            <% })%>
+        </tbody>
+    </table>
+
+    <br><hr>
+    
+    <div class="col col-12" style="padding-left: 30%;">
+        <h2> Consulta de Arquivos MO </h2>
+    </div>
+    
+    <hr>
+
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID_Técnica_MO    </th>
+                <th>Objetiva         </th>
+                <th>Diretório        </th>    
+                <th>ID_Técnica_MO     </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% tecnicaMoImagem.forEach(tcMoIm => { %>
+            <tr>
+                <th><%= tcMoIm.id_tecnica_mo_imagem       %></th>    
+                <th><%= tcMoIm.objetiva                   %></th>    
+                <th><%= tcMoIm.diretorio                  %></th>    
+                <th><%= tcMoIm.tecnicaMoIdTecnicaMo       %></th>    
+
+            <% })%>
+        </tbody>
+    </table>
+    <br><hr>
+</div>

@@ -1,0 +1,21 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/homenavbar.ejs') %>
+<body>
+    <div class="container">
+        <br><hr>
+        <div class="col col-12" style="padding-left: 30%;">
+            <h2>Envio do Json</h2>
+        </div>
+        <hr>
+        <form method="POST" action="/enviarJson" style="display: inline;">
+            <div>
+                <textarea id="texto" name="jsonTexto" placeholder="Envie seu Json" rows="10" cols="140"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<%- include ('partials/footer.ejs') %>
